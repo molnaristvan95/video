@@ -235,6 +235,7 @@
     </div>
   </section>
   <nav class="flex center equal">
+    <button id="full" type="button">FS</button>
     <label id="nfo">info</label>
     <input id="jmptm" type="text" maxlength="5" placeholder="time in minutes">
     <button id="jmp" type="button">Jump</button>
@@ -443,6 +444,10 @@
     window.setInterval(() => {
       $('tVIDEO')[0].volume = $('#vol').value / 10;
     }, 256);
+
+    $('#full').addEventListener('click', () => {
+      $('tSECTION')[0].requestFullscreen();
+    });
 
     /* ---------------------------- callback -------------------------------- */
 
