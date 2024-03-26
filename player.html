@@ -25,6 +25,7 @@
       margin: 0;
       background: #000;
       padding-bottom: 2vh;
+      overflow: hidden auto;
     }
 
     body#main::before {
@@ -192,11 +193,24 @@
     }
 
     nav>* {
-      width: 50%;
-      margin-lef: 16px;
-      border-radius: 4px;
-      padding: 4px;
+      width: 100%;
+      display: block;
+      white-space: nowrap;
+      margin-top: 4px;
+    }
+
+    nav>*::after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+
+    nav>*>* {
       float: left;
+      display: block;
+      width: 50%;
+      margin: 0;
+      padding: 0;
     }
 
     label {
@@ -222,7 +236,7 @@
       height: 2rem;
       font-size: 1.5rem;
       border-radius: 999px;
-      width: 45%;
+      width: 40%;
     }
 
     #input {
@@ -230,11 +244,10 @@
     }
 
     #crrnt {
-      width: 10%;
+      width: 20%;
     }
 
     #jmp {
-      width: 29%;
       zoom: 1.5;
     }
 
@@ -292,19 +305,31 @@
     </div>
   </section>
   <nav class="clearfix">
-    <button id="full" type="button">FullScreen</button>
-    <label id="crrnt">current time</label>
-    <button id="ply" type="button" data-text="0">Play</button>
-    <label id="nfo">info</label>
-    <input type="file" id="input" name="input_video" accept="video/*">
-    <label id="volumeis">%</label>
-    <input id="vol" type="range" min="0" max="10" value="5">
-    <label id="speedis">V × S</label>
-    <input id="speed" type="range" min="1" max="17" value="6">
-    <input id="jmptm" type="text" maxlength="5" placeholder="time in minutes jump">
-    <button id="jmp" type="button">Jump</button>
-    <label id="brightLab">Brightness: </label>
-    <input id="bright" type="range" min="16" max="250" value="100">
+    <div>
+      <button id="full" type="button">FullScreen</button>
+      <label id="crrnt">current time</label>
+      <button id="ply" type="button" data-text="0">Play</button>
+    </div>
+    <div>
+      <label id="nfo">info</label>
+      <input type="file" id="input" name="input_video" accept="video/*">
+    </div>
+    <div>
+      <label id="volumeis">%</label>
+      <input id="vol" type="range" min="0" max="10" value="5">
+    </div>
+    <div>
+      <label id="speedis">V × S</label>
+      <input id="speed" type="range" min="1" max="17" value="6">
+    </div>
+    <div>
+      <input id="jmptm" type="text" maxlength="5" placeholder="time in minutes jump">
+      <button id="jmp" type="button">Jump</button>
+    </div>
+    <div>
+      <label id="brightLab">Brightness: </label>
+      <input id="bright" type="range" min="16" max="250" value="100">
+    </div>
     <br>
     <canvas>Not supported canvas</canvas>
     <canvas>Not supported canvas</canvas>
