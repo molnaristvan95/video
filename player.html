@@ -524,6 +524,15 @@
         let len = Math.trunc(parseFloat($('tVIDEO')[0].duration) / 60);
         $('#nfo').innerHTML = 'L: ' + len + 'min; W: ' + $('#video').videoWidth + 'px; H: ' + $('#video').videoHeight + 'px;';
       }, 2048);
+      let vw = video.videoWidth,
+        vh = video.Height;
+      if (vw > vh) {
+        video.style.height = '100%';
+        video.style.width = 'auto';
+      } else {
+        video.style.height = 'auto';
+        video.style.width = '100%';
+      }
       window.setTimeout(thumbnails, 1024);
     });
 
