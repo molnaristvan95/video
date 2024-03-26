@@ -181,12 +181,14 @@
       height: 100%;
       top: 0;
       left: 0;
+      z-index: 999 !important;
       display: block;
       background: transparent;
     }
 
     video {
       height: 100%;
+      z-index: 1;
     }
 
     nav>* {
@@ -265,7 +267,7 @@
   <dialog id="sms" class="flex center">Hiba! Error!</dialog>
   <section class="flex center equal">
     <div class="blockTouchVideoOnTablet"></div>
-    <video id="video" style="display: none;" controlsList="nodownload">video tag not supported</video>
+    <video id="video" style="display: none;" controlsList="nodownload" oncontextmenu="return false;">video tag not supported</video>
     <div id="progressing">
       <div id="line"></div>
     </div>
@@ -557,6 +559,11 @@
     $('#bright').ondblclick = () => {
       $('#bright').value = 100;
     }
+
+    $('#video').addEventListener('contextmenu', (event) => {
+      event.preventDefault();
+      return false;
+    });
 
     /* ---------------------------- callback -------------------------------- */
 
