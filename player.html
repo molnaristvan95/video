@@ -303,7 +303,7 @@
       }
 
       #nfo {
-        font-size: 10px;
+        font-size: 8px;
       }
     }
 
@@ -528,7 +528,7 @@
       video.style.display = "block";
       window.setTimeout(() => {
         let len = Math.trunc(parseFloat($('tVIDEO')[0].duration) / 60);
-        $('#nfo').innerHTML = 'L: ' + len + 'min; W: ' + $('#video').videoWidth + 'px; H: ' + $('#video').videoHeight + 'px;';
+        $('#nfo').innerHTML = 'L: ' + len + 'm; W: ' + $('#video').videoWidth + 'px; H: ' + $('#video').videoHeight + 'px;';
       }, 2048);
       let vw = video.videoWidth,
         vh = video.Height;
@@ -602,7 +602,6 @@
       v = $('#video'),
       arr = [16, 32, 48, 64, 80],
       cw = Math.trunc(parseFloat(properties(c[0], 'width'))),
-      //      ch = parseFloat(c[0].height),
       ch = Math.trunc(parseFloat(properties(c[0], 'height'))) - 10,
       thumbnails = () => {
         if (index < maxIndex) {
