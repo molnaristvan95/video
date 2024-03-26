@@ -201,7 +201,7 @@
 
     #full,
     #ply {
-      width: 48%;
+      width: 46%;
       height: 2rem;
       font-size: 1.5rem;
       border-radius: 999px;
@@ -209,7 +209,7 @@
 
     #input,
     #nfo {
-      width: 48%;
+      width: 46%;
       display: inline-block;
     }
 
@@ -255,6 +255,13 @@
     }
 
     /* ------------------ media queries ---------------------*/
+
+    @media (max-width:1000px) {
+      canvas {
+        width: 45%;
+        height: calc(45vw / 1.7777);
+      }
+    }
 
     /* ------------------ black list quick test ---------------------*/
 
