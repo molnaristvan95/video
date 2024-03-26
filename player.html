@@ -535,6 +535,10 @@
       if (vw > vh) {
         video.style.height = '100%';
         video.style.width = '';
+        for (let cc of $('tCANVAS')) {
+          let wid = $('tCANVAS')[0].offsetWidth;
+          cc.style.height = 'calc(' + wid + 'px / 1.777)';
+        }
       } else {
         video.style.height = '';
         video.style.width = '100%';
