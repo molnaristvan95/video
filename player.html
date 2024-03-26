@@ -530,22 +530,25 @@
         let len = Math.trunc(parseFloat($('tVIDEO')[0].duration) / 60);
         $('#nfo').innerHTML = 'L: ' + len + 'm; W: ' + $('#video').videoWidth + 'px; H: ' + $('#video').videoHeight + 'px;';
       }, 2048);
-      let vw = video.videoWidth,
-        vh = video.videoHeight;
-      if (vw > vh) {
-        video.style.height = '100%';
-        video.style.width = '';
-        for (let cc of $('tCANVAS')) {
-          cc.removeAttribute('style');
+      window.setTimeout(() => {
+        let vw = video.videoWidth,
+          vh = video.videoHeight;
+        console.log(vw + ' ' + vh);
+        if (vw > vh) {
+          video.style.height = '100%';
+          video.style.width = '';
+          for (let cc of $('tCANVAS')) {
+            cc.removeAttribute('style');
+          }
+        } else {
+          video.style.height = '';
+          video.style.width = '100%';
+          for (let cc of $('tCANVAS')) {
+            let wid = cc.offsetWidth;
+            cc.style.height = 'calc(' + wid + 'px * 1.777)';
+          }
         }
-      } else {
-        video.style.height = '';
-        video.style.width = '100%';
-        for (let cc of $('tCANVAS')) {
-          let wid = cc.offsetWidth;
-          cc.style.height = 'calc(' + wid + 'px * 1.777)';
-        }
-      }
+      }, 2048);
       window.setTimeout(thumbnails, 1024);
     });
 
