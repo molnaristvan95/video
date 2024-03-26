@@ -208,9 +208,13 @@
     nav>*>* {
       float: left;
       display: block;
-      width: 50%;
+      width: 30%;
       margin: 0;
       padding: 0;
+    }
+
+    nav>*>*:nth-child(even) {
+      width: 70%;
     }
 
     label {
@@ -279,12 +283,21 @@
       border: 1px solid #333;
     }
 
+
     /* ------------------ media queries ---------------------*/
 
     @media (max-width:1000px) {
+      *:root {
+        font-size: 12px;
+      }
+
       canvas {
         width: 45%;
         height: calc(45vw / 1.7777);
+      }
+
+      canvas:nth-of-type(5) {
+        margin-left: 25%;
       }
     }
 
