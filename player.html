@@ -511,6 +511,12 @@
       $('#video').playbackRate = val;
       $('#video').defaultPlaybackRate = val;
     });
+    $('#speed').addEventListener('change', () => {
+      let val = speedArr[(parseFloat($('#speed').value) - 1)]
+      $('#speedis').innerHTML = 'Speed = ' + val + '×';
+      $('#video').playbackRate = val;
+      $('#video').defaultPlaybackRate = val;
+    });
     $('#speed').click();
     $('#speed').addEventListener('dblclick', () => {
       $('#speed').value = 6;
