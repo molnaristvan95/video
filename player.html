@@ -188,7 +188,9 @@
     }
 
     video {
+      positio: absolute;
       height: 100%;
+      widt: 100%;
       z-index: 1;
     }
 
@@ -299,6 +301,8 @@
       canvas:nth-of-type(5) {
         margin-left: 25%;
       }
+
+      #nfo {}
     }
 
     /* ------------------ black list quick test ---------------------*/
@@ -528,9 +532,9 @@
         vh = video.Height;
       if (vw > vh) {
         video.style.height = '100%';
-        video.style.width = 'auto';
+        video.style.width = '';
       } else {
-        video.style.height = 'auto';
+        video.style.height = '';
         video.style.width = '100%';
       }
       window.setTimeout(thumbnails, 1024);
