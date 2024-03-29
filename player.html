@@ -8,7 +8,7 @@
   <meta name="author" content="Ksenicz István Sztepanovics || Кшеніц Степан Степанович">
   <meta name="keywords" content="">
   <meta name="theme-color" content="#050">
-  <title></title>
+  <title>PathPlayer</title>
   <style rel="stylesheet" type="text/css">
     /* ------------------ base and templates ---------------------*/
     *:root {
@@ -105,6 +105,8 @@
       height: 50%;
       position: fixed;
       font-size: 24px;
+      z-index: 999;
+      display: flex;
     }
 
     ::-webkit-scrollbar-track:hover,
@@ -421,6 +423,7 @@
       },
       message = (text, time) => {
         const elem = document.getElementById('sms');
+        elem.style.display = 'flex';
         elem.show();
         elem.innerHTML = text;
         window.setTimeout(() => {
@@ -509,6 +512,7 @@
           $('#jmptm').focus();
         } else if (k == 'f') {
           $('tSECTION')[0].requestFullscreen();
+          $('tSECTION')[0].webkitRequestFullscreen();
         } else if (k == 'ArrowDown') {
           $('#vol').value -= 3;
         } else if (k == 'ArrowUp') {
@@ -522,6 +526,7 @@
     /* ---------------------------- targeted functions -------------------------------- */
 
     document.getElementById("input").addEventListener("change", function() {
+      $('#ply').style.background = '#f00';
       var media = URL.createObjectURL(this.files[0]);
       var video = document.getElementById("video");
       video.src = media;
@@ -626,8 +631,9 @@
         } else {
           window.setTimeout(() => {
             v.currentTime = 0;
-            message('Ready to play!', 512);
+            message('Ready to play!', 1024);
             index = 0;
+            $('#ply').style.background = '#0000';
           }, 2048);
         }
       };
